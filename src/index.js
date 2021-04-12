@@ -3,10 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { GameOptionsProvider } from './contexts/GameOptionsContext';
+import { BackendProvider } from './contexts/BackendContext';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <GameOptionsProvider>
+      <BackendProvider>
+        <App />
+      </BackendProvider>
+    </GameOptionsProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
